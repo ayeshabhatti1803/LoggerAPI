@@ -1,6 +1,8 @@
 using System;
+using logger.Implementation;
+using logger.Helpers;
 
-namespace logger
+namespace logger.Models
 {
     /// <summary>
     /// An object that stores a single log entry.
@@ -9,10 +11,10 @@ namespace logger
     public class LogEntry
     {
         private long timestamp;
-        private Logger.Severity severity;
-        private String message;
+        private Severity severity;
+        private string message;
 
-        public LogEntry(long timestamp, Logger.Severity severity, String message)
+        public LogEntry(long timestamp, Severity severity, string message)
         {
             this.timestamp = timestamp;
             this.severity = severity;
@@ -24,12 +26,12 @@ namespace logger
             return timestamp;
         }
 
-        public Logger.Severity GetSeverity()
+        public Severity GetSeverity()
         {
             return severity;
         }
 
-        public String GetMessage()
+        public string GetMessage()
         {
             return message;
         }
